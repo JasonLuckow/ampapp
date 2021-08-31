@@ -13,12 +13,12 @@ export const getTodo = /* GraphQL */ `
   }
 `;
 export const listNotes = /* GraphQL */ `
-  query listNotes(
+  query ListTodos(
     $filter: ModelTodoFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
