@@ -1,0 +1,54 @@
+{
+  "paths": [
+    {
+      "name": "/apitest",
+      "lambdaFunction": "APILambdaTest",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/apitest"
+    },
+    {
+      "name": "/swagger",
+      "lambdaFunction": "swag",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/swagger"
+    }
+  ],
+  "resourceName": "APITesting",
+  "apiName": "APITesting",
+  "functionArns": [
+    {
+      "lambdaFunction": "APILambdaTest"
+    },
+    {
+      "lambdaFunction": "swag"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-ampapp-main-01635-authRole",
+    "unAuthRoleName": "amplify-ampapp-main-01635-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "APILambdaTest",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    },
+    {
+      "category": "function",
+      "resourceName": "swag",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
