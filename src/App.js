@@ -4,6 +4,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { API, Storage } from 'aws-amplify';
+import Constants from './Constants'
 
 const initialFormState = { name: '', description: '' }
 
@@ -59,7 +60,7 @@ function App() {
       <h1>My Notes App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
+        placeholder= {fetch(Constants.APIRoot + "Hello/get")}
         value={formData.name}
       />
       <input
